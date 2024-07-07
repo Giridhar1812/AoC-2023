@@ -22,7 +22,8 @@ namespace AoC
         public static long CalibrateDocumentDigitsAsWords()
         {
             var input = $"";
-
+            var filePath = "C:/Personal_Files/Learning/GitRepo/AoC-2023/Day1/puzzle2input.txt";
+            var inputLines = File.ReadAllText(filePath).Split(new[] { Environment.NewLine }, StringSplitOptions.None);
             //$"two1nine\neightwothree\nabcone2threexyz\nxtwone3four\n4nineeightseven2\nzoneight234\n7pqrstsixteen"; //
             Dictionary<string, string> numbers = new()
             {
@@ -40,9 +41,9 @@ namespace AoC
             long sum = 0;
             var firstNumber = "";
             var secondNumber = "";
-            foreach (var cal in inputCalibrations)
+            foreach (var cal in inputLines)
             {
-                // Console.WriteLine($"String: {cal}");
+                Console.WriteLine($"String: {cal}");
 
                 var currentString = cal;
                 var leastIndex = cal.Length; // - 1
@@ -53,24 +54,24 @@ namespace AoC
                 {
                     if (currentString.Contains(number.Key))
                     {
-                        if(cal.IndexOf(number.Key) < leastIndex)
+                        if (cal.IndexOf(number.Key) < leastIndex)
                         {
                             firstNumber = number.Key;
                             leastIndex = cal.IndexOf(number.Key);
                         }
                     }
                 }
-                
+
                 // currentString = string.IsNullOrEmpty(firstNumber) ? currentString : currentString.Replace(firstNumber, ""); //string.IsNullOrEmpty(firstNumber) ? currentString : 
 
                 var lastDigit = cal.LastOrDefault(x => char.IsDigit(x));
                 var indexOfLastDigit = lastDigit != 0 ? cal.LastIndexOf(lastDigit) : -1;
-                foreach (var number in numbers.Where(x => x.Key != firstNumber))
+                foreach (var number in numbers)
                 {
                     // Console.WriteLine($"Before: Max Index {maxIndex}, Number: {number}");
                     if (currentString.Contains(number.Key))
                     {
-                        if(cal.LastIndexOf(number.Key) > maxIndex)
+                        if (cal.LastIndexOf(number.Key) > maxIndex)
                         {
                             maxIndex = cal.LastIndexOf(number.Key);
                             secondNumber = number.Key;
@@ -81,7 +82,7 @@ namespace AoC
 
                 numbers.TryGetValue(firstNumber, out var firstNumberViaString);
                 numbers.TryGetValue(secondNumber, out var secondNumberViaString);
-                
+
                 string computedFirstDigit = indexOfFirstDigit < leastIndex ? firstDigit.ToString() : firstNumberViaString ?? "";
 
                 string? computedLastDigit = null;
@@ -93,19 +94,23 @@ namespace AoC
                 {
                     computedLastDigit = secondNumberViaString ?? null;
                 }
-                else
+                else if (indexOfLastDigit > maxIndex)
                 {
                     computedLastDigit = lastDigit.ToString();
-                    // Console.WriteLine($"Entering last else condition : {computedLastDigit}");
                 }
-                
-                // Console.WriteLine($"indexOfFirstDigit: {indexOfFirstDigit}, leastIndex: {leastIndex}, firstDigit: {firstDigit}, firstNumber: {firstNumber}");
-                // Console.WriteLine($"indexOfLastDigit: {indexOfLastDigit}, maxIndex: {maxIndex}, lastDigit: {lastDigit}, secondNumber: {secondNumber}");
-                
+                computedLastDigit ??= lastDigit.ToString();
+                // else
+                // {
+                //     // Console.WriteLine($"Entering last else condition : {computedLastDigit}");
+                // }
+
+                Console.WriteLine($"indexOfFirstDigit: {indexOfFirstDigit}, leastIndex: {leastIndex}, firstDigit: {firstDigit}, firstNumber: {firstNumber}");
+                Console.WriteLine($"indexOfLastDigit: {indexOfLastDigit}, maxIndex: {maxIndex}, lastDigit: {lastDigit}, secondNumber: {secondNumber}");
+
                 firstNumber = "";
                 secondNumber = "";
-                
-                // Console.WriteLine($"{computedFirstDigit}{computedLastDigit ?? computedFirstDigit}");
+
+                Console.WriteLine($"{computedFirstDigit}{computedLastDigit ?? computedFirstDigit}\n");
                 sum += int.Parse($"{computedFirstDigit}{computedLastDigit ?? computedFirstDigit}");
             }
             return sum;
