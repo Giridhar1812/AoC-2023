@@ -2,6 +2,7 @@
 using Algorithms;
 using AoC;
 using AoC_2023.Day3;
+using LeetCodeDaily;
 using NeetCode150;
 
 namespace AdventOfCodePuzzles
@@ -11,7 +12,7 @@ namespace AdventOfCodePuzzles
         private static void Main(string[] args)
         {
             //Console.WriteLine("Hello, World!");
-            //var result = Day1.CalibrateDocumentDigitsAsWords(); 
+            //var result = Day1.CalibrateDocumentDigitsAsWords();
             //Day2.FindProductOfLeastNumberOfCubesRequiredForEachGame();
             //Day1.CalibrateDocumentDigitsAsWords();
             //Console.WriteLine($"Result: {result}");
@@ -21,7 +22,7 @@ namespace AdventOfCodePuzzles
             // IsAnagram();
             //  GroupAnagrams(new string[] {"eat","tea","tan","ate","nat","bat"});
 
-            // KadanesAlgorithm.GetMaxSumOfContigousSubArray(new int[] { -4, -1, -2, -7, -3, -4 });
+            KadanesAlgorithm.GetMaxSumOfContigousSubArray(new int[] { -4, -1, -2, -7, -3, -4 });
 
             //NeetCode150
 
@@ -33,7 +34,41 @@ namespace AdventOfCodePuzzles
 
             //TwoPointers
             TwoPointers.IsPalindrome();
+            // TwoPointers.TwoSum();
+            // TwoPointers.ThreeSum();
+            // TwoPointers.Trap();
 
+            //Stacks
+            // Stacks.IsValidParantheses();
+            // Stacks.EvalRPN();
+            // Stacks.DailyTemperatures();
+            // Stacks.CarFleet();
+            // Stacks.LargestRectangleArea(); //hard
+            // Stacks.MaxProfit();
+            // Stacks.MaxProfit_II();
+            // Stacks.MaxProfit_III();
+
+            // BinarySearch
+            BinarySearch.Search();
+            BinarySearch.SearchMatrix();
+            BinarySearch.MinEatingSpeed();
+            BinarySearch.FindMinInRotatedArray();
+            BinarySearch.SearchInRotatedSortedArray();
+
+            //SlidingWindow
+            SlidingWindow.MaxProfit();
+            SlidingWindow.LengthOfLongestSubstring();
+            SlidingWindow.CharacterReplacement();
+
+            //LeetCodeDaily
+            // LeetCodeDailyChallenge.Bottles();
+
+            LeetCodeProblems.LengthOfLIS();
+            // LeetCodeProblems.LengthOfLIS_Solution();
+            // LeetCodeProblems.LIS_WithoutBinarySearch();
+            // LeetCodeProblems.IncreasingTriplet();
+            // LeetCodeProblems.maxProfitTriplets();
+            // LeetCodeProblems.ArrayRotate();
             // Console.ReadLine();
         }
 
