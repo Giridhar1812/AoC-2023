@@ -4,6 +4,7 @@ using AoC;
 using AoC_2023.Day3;
 using LeetCodeDaily;
 using NeetCode150;
+using CsharpInternals;
 
 namespace AdventOfCodePuzzles
 {
@@ -22,7 +23,7 @@ namespace AdventOfCodePuzzles
             // IsAnagram();
             //  GroupAnagrams(new string[] {"eat","tea","tan","ate","nat","bat"});
 
-            KadanesAlgorithm.GetMaxSumOfContigousSubArray(new int[] { -4, -1, -2, -7, -3, -4 });
+            //KadanesAlgorithm.GetMaxSumOfContigousSubArray(new int[] { -4, -1, -2, -7, -3, -4 });
 
             //NeetCode150
 
@@ -33,7 +34,7 @@ namespace AdventOfCodePuzzles
             // ArraysAndHashing.LongestConsecutive_HashApproach();
 
             //TwoPointers
-            TwoPointers.IsPalindrome();
+            // TwoPointers.IsPalindrome();
             // TwoPointers.TwoSum();
             // TwoPointers.ThreeSum();
             // TwoPointers.Trap();
@@ -49,27 +50,30 @@ namespace AdventOfCodePuzzles
             // Stacks.MaxProfit_III();
 
             // BinarySearch
-            BinarySearch.Search();
-            BinarySearch.SearchMatrix();
-            BinarySearch.MinEatingSpeed();
-            BinarySearch.FindMinInRotatedArray();
-            BinarySearch.SearchInRotatedSortedArray();
+            // BinarySearch.Search();
+            // BinarySearch.SearchMatrix();
+            // BinarySearch.MinEatingSpeed();
+            // BinarySearch.FindMinInRotatedArray();
+            // BinarySearch.SearchInRotatedSortedArray();
 
             //SlidingWindow
-            SlidingWindow.MaxProfit();
-            SlidingWindow.LengthOfLongestSubstring();
-            SlidingWindow.CharacterReplacement();
+            // SlidingWindow.MaxProfit();
+            // SlidingWindow.LengthOfLongestSubstring();
+            // SlidingWindow.CharacterReplacement();
 
             //LeetCodeDaily
             // LeetCodeDailyChallenge.Bottles();
 
-            LeetCodeProblems.LengthOfLIS();
+            // LeetCodeProblems.LengthOfLIS();
             // LeetCodeProblems.LengthOfLIS_Solution();
             // LeetCodeProblems.LIS_WithoutBinarySearch();
             // LeetCodeProblems.IncreasingTriplet();
             // LeetCodeProblems.maxProfitTriplets();
             // LeetCodeProblems.ArrayRotate();
             // Console.ReadLine();
+
+            // new CsharpDelegates().Perform();
+            CsharpSemaphore.Main(new string[] {""}).GetAwaiter().GetResult();
         }
 
         static IList<IList<string>> GroupAnagrams(string[] strs)
